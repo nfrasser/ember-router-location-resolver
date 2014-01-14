@@ -7,7 +7,7 @@
 
 	"use strict";
 
-	// find the application to detect
+	// Find the first active Ember application
 	var App = Em.Application.detect(window.App.constructor) ?
 		window.App : Em.Application.NAMESPACES.find(function (namespace) {
 			return Em.Application.detect(namespace.constructor);

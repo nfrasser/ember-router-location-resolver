@@ -2,7 +2,7 @@ var express = require('express'),
 	app = express();
 
 // Load up the resolver file
-app.get('/example/js/resolver.js', function (req, res) {
+app.get('/example/js/location-resolver.js', function (req, res) {
 	res.sendfile(__dirname + '/src/location-resolver.js');
 });
 
