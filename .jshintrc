@@ -1,0 +1,21 @@
+{
+	"undef": true,
+	"unused": true,
+	"curly": true,
+	"indent": 4,
+	"devel": true,
+	"white": true,
+	"strict": false,
+	"globalstrict": false,
+	"quotmark": false,
+	"browser": true,
+	"jquery": true,
+	"node": true,
+	"es3": true,
+	"globals": {
+		"Handlebars":		false,
+		"Ember":			false,
+		"Em":				false,
+		"App":				false
+	}
+}
