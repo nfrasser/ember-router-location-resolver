@@ -1,4 +1,4 @@
-# Location Resolver <small>for the [Ember.js](http://emberjs.com) router</small>
+# Location Resolver <sub><sup>for the [Ember.js](http://emberjs.com) router</sup></sub>
 
 * [Download 1.0](https://raw.github.com/nfrasser/ember-router-location-resolver/master/src/location-resolver.js)
 for Ember 1.0 and up.
@@ -73,7 +73,7 @@ Route::get('my/app/{uri?}', function () {
 ```
 
 #### Important:
-If your app is located at the root '/' route on your server, make sure
+If your app is located at the root `/` route on your server, make sure
 that any APIs and other static routes are handled _before_ that route is
 resolved.
 
