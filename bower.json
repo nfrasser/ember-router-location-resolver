@@ -1,6 +1,6 @@
 {
   "name": "ember-router-location-resolver",
-  "main": "ember-router-location-resolver.js",
+  "main": "src/location-resolver.js",
   "version": "1.0.0",
   "homepage": "https://github.com/nfrasser/ember-router-location-resolver",
   "authors": [
@@ -8,6 +8,7 @@
   ],
   "description": "Use the browser's History API for Ember.js routing and fallback to hash on older browsers",
   "keywords": [
+    "ember",
     "ember.js",
     "router",
     "history",
@@ -22,6 +23,8 @@
     "node_modules",
     "bower_components",
     "test",
+    "example",
+    "example-server.js",
     "tests"
   ],
   "dependencies": {
