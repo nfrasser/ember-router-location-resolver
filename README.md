@@ -137,7 +137,7 @@ App.set('rootURL', 'my/app/');
 App.set('namespace', 'my/app/');
 ```
 
-This is a workaround to complications caused by the asyncronous nature of
+This is a workaround to complications caused by the asynchronous nature of
 `App.Router.reopen` and may not be required in the future.
 
 ## Some gotchas and solutions
@@ -154,7 +154,7 @@ care of loading the proper route.
 
 Take another look at the [Server Configuration](#server-configuration) section.
 
-> I'm experiencing strange redirects
+> I'm experiencing strange page redirect issues
 
 The `rootURL` for your Ember app may not be defined property. [Note the new way](#important-1)
 of defining this property for this addon.
