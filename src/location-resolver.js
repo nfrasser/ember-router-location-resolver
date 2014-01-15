@@ -86,7 +86,7 @@
 
 	// Figure out what routing method to use based on the results
 	App.Router.reopen({
-		rootURL: '/' + appRoot + '/',
+		rootURL: '/' + appRoot,
 		location: hasHistory ? 'history' : 'hash'
 	});
 
