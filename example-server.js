@@ -1,23 +1,27 @@
 var express = require('express'),
 	app = express();
 
-// Load up the resolver file
 app.get('/example/js/location-resolver.js', function (req, res) {
+
+	// Load up the resolver file
 	res.sendfile(__dirname + '/src/location-resolver.js');
 });
 
-// Load up any required assets
-app.get('/example/(js|css)/*', function (req, res) {
+app.get('/example/(js|css|img)/*', function (req, res) {
+
+	// Load up any required assets
+	// Return the actual file based on the given URL
 	res.sendfile(__dirname + req.originalUrl);
 });
 
-// Everything else goes to index.html
 app.get('/example/*', function (req, res) {
+
+	// Render the main view (index.html)
 	res.sendfile(__dirname + '/example/index.html');
 });
 
-// Everything else redirects to example
 app.get('*', function (req, res) {
+	// Everything else redirects to example
 	res.redirect('/example/');
 });
 
