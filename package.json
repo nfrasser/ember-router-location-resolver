@@ -1,6 +1,6 @@
 {
   "name": "ember-router-location-resolver",
-  "version": "0.9.0",
+  "version": "1.0.0",
   "description": "Use the browser's History API for Ember.js routing and fallback to hash on older browsers",
   "main": "ember-router-location-resolver.js",
   "directories": {
@@ -24,7 +24,7 @@
     "url"
   ],
   "author": "Nick Frasser <nfrasser@gmail.com>",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/nfrasser/ember-router-location-resolver/issues"
   },

@@ -1,27 +1,30 @@
-Location Resolver for the [Ember.js](http://emberjs.com) Router
-==============================
+# Location Resolver <small>for the [Ember.js](http://emberjs.com) router</small>
 
-[Download 0.9.0](https://raw.github.com/nfrasser/ember-router-location-resolver/master/src/location-resolver.js)
+* [Download 1.0](https://raw.github.com/nfrasser/ember-router-location-resolver/master/src/location-resolver.js)
+for Ember 1.0 and up.
 
-## Get rid of the __#__ !
+### Get rid of the `#`!
 
-Use the browser's History API for Ember.js routing
-and fallback to hash on older browsers. Just include the above file
-with your [Ember.js](https://github.com/emberjs/ember.js) application.
+Use the browser's History API for Ember.js routing and fallback to hash
+on older browsers. Just update your server routes and include the above
+file with your [Ember.js](https://github.com/emberjs/ember.js)
+web app.
 
-The resolver will allow your Ember App to use the
+The resolver will allow your application to use
+[Ember's native implementation](http://emberjs.com/api/classes/Ember.HistoryLocation.html)
+of the
 [HTML5 History API](https://developer.mozilla.org/en-US/docs/Web/Guide/API/DOM/Manipulating_the_browser_history)
-for routing. That means that the `/#/` of the URL can be replaced with a
-single `/`. Now your speedy Ember web app will have even more beautiful
-URLs.
+for routing. That means that the `/#/` part of the URL can be replaced
+with a single `/`. Now your speedy Ember web app can benefit from even
+more beautiful URLs.
 
-And the best part: All your old hash URLs still work! The resolver will
-automatically redirect to the updated hash version.
+And the best part? __All your old hash URLs still work!__ The resolver
+will automatically redirect to the updated hashless version.
 
-## Running the Example Server
+## Running the example server
 
-To see Ember's History routing in action, check out the example server
-included with this repo. Here's how to run it from the terminal:
+To see Ember's History routing in action, check out the sample app
+included with this repo. Here's how to run it from the command line:
 
 ```shell
 git clone https://github.com/nfrasser/ember-router-location-resolver.git
@@ -29,15 +32,18 @@ cd ember-router-location-resolver
 npm install && npm start
 ```
 
-Then open the example app in your browser at [localhost:3001](http://localhost:3000).
+Then visit [localhost:3001](http://localhost:3001) in your favourite
+browser.
 
 ## Server Configuration
 
-First make sure your web server loads the same view for any URL variation
-in your app's namespace. How you choose to implement this will depend on
-your backend environment. For most frameworks, you can set up a route like
-`GET '/my/app/*'` that always loads the same view.
-Check out the examples below, as well as the [example server](#running-the-example-server).
+Make sure your web server loads the same view for any URL variation in
+your app's root URL. How you choose to implement this will depend on
+your backend environment and your route configuration. For most
+frameworks, you can set up a wildcard route like `GET '/my/app/*'` that
+always renders the same view. Check out the examples below, as well as the
+[Node/Express server](https://github.com/nfrasser/ember-router-location-resolver/blob/master/example-server.js)
+for the [sample app](#running-the-example-server).
 
 ### Node (Express) example
 
@@ -66,13 +72,18 @@ Route::get('my/app/{uri?}', function () {
 })->where('uri', '[a-zA-Z0-9-\/_.]*');
 ```
 
-#### Important
-If your app is located at the `index` route, make sure that any API and
-asset routes are handled _before_ the `/*` route.
+#### Important:
+If your app is located at the root '/' route on your server, make sure
+that any APIs and other static routes are handled _before_ that route is
+resolved.
+
+If your server is set up correctly, Ember will take care of the rest.
 
 ## Application Configuration
-Once your server is propertly set up, include the `location-resolver.js`
-file sometime after the `Ember.Application.create()` line:
+
+Once your server is propertly set up, simply include the
+`location-resolver.js` file sometime after the
+`Ember.Application.create()` line:
 
 ```html
 <!DOCTYPE html>
@@ -106,8 +117,9 @@ App.Router.map(function () {
 });
 ```
 
-#### Important
-If your app is not at the root of your domain, you'll have to
+#### Important:
+Depending on how your server routes are set up, if your Ember app's root
+URL (`App.Router.rootURL`) is something other than `/` you'll have to
 change this block:
 
 ```javascript
@@ -127,4 +139,25 @@ App.set('namespace', 'my/app/');
 This is a workaround to complications caused by the asyncronous nature of
 `App.Router.reopen` and may not be required in the future.
 
+## Some gotchas and solutions
 
+> My server 404s whenever I refresh the page
+
+On your server, make sure that any variation of your application's root URL
+loads the same view.
+
+For example, if your app is located at `http://localhost/my/app/`
+and you have a `/posts` route defined in Ember,
+`/my/app/posts/` should load the same view as `/my/app`. Ember will take
+care of loading the proper route.
+
+Take another look at the [Server Configuration](#server-configuration) section.
+
+> I'm experiencing strange redirects
+
+The `rootURL` for your Ember app may not be defined property. [Note the new way](#important-1)
+of defining this property for this addon.
+
+## Licence
+
+MIT
