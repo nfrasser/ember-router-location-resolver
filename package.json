@@ -1,6 +1,6 @@
 {
   "name": "ember-router-location-resolver",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Use the browser's History API for Ember.js routing and fallback to hash on older browsers",
   "main": "src/location-resolver.js",
   "directories": {
