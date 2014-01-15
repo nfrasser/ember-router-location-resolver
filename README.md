@@ -2,6 +2,7 @@
 
 * [Download 1.0](https://raw.github.com/nfrasser/ember-router-location-resolver/master/src/location-resolver.js)
 for Ember 1.0 and up.
+* Add to your project via [Bower](http://bower.io/): `bower install ember-router-location-resolver`.
 
 ### Get rid of the `#`!
 
