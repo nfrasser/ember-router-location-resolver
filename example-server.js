@@ -20,7 +20,7 @@ app.get('/example/*', function (req, res) {
 	res.sendfile(__dirname + '/example/index.html');
 });
 
-app.get('*', function (req, res) {
+app.get('/', function (req, res) {
 	// Everything else redirects to example
 	res.redirect('/example/');
 });
