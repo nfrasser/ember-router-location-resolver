@@ -68,7 +68,7 @@ module.exports = function (app) {
 ### PHP (Laravel) example
 ```php
 // routes.php
-Route::get('my/app/{uri?}', function () {
+Route::get('my/app/{uri}', function () {
   return View::make('home');
 })->where('uri', '[a-zA-Z0-9-\/_.]*');
 ```
