@@ -1,7 +1,7 @@
 {
   "name": "ember-router-location-resolver",
   "main": "src/location-resolver.js",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/nfrasser/ember-router-location-resolver",
   "authors": [
     "Nick Frasser <nfrasser@gmail.com>"
