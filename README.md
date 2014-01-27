@@ -30,7 +30,7 @@ included with this repo. Here's how to run it from the command line:
 ```shell
 git clone https://github.com/nfrasser/ember-router-location-resolver.git
 cd ember-router-location-resolver
-npm install && npm start
+npm install && bower install && npm start
 ```
 
 Then visit [localhost:3001](http://localhost:3001) in your favourite
