@@ -4,6 +4,10 @@
 for Ember 1.0 and up.
 * Add to your project via [Bower](http://bower.io/): `bower install ember-router-location-resolver`.
 
+### Using Ember 1.5 and up?
+
+This functionality is now built into Ember.js with [`Ember.AutoLocation`](http://emberjs.com/api/classes/Ember.Location.html#toc_autolocation). Just make sure [your server is configured properly](#server-configuration).
+
 ### Get rid of the `#`!
 
 Use the browser's History API for Ember.js routing and fallback to hash
